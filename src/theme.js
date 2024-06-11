@@ -42,6 +42,11 @@ const theme = createTheme({
         //   lineHeight: '28px',
         // },
       },
+      button1: {
+        fontWeight: 700,
+        fontSize: '16px',
+        lineHeight: '24px',
+      },
       caption: {
         fontWeight: 500,
         fontSize: '12px',
@@ -62,11 +67,7 @@ const theme = createTheme({
         fontSize: '24px',
         lineHeight: '36px',
       },
-      button2: {
-        fontWeight: 700,
-        fontSize: '14px',
-        lineHeight: '20.44px',
-      }
+      
 
     },
     components: {

@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 
 
-export default function FilterItem({text, isSelected, onClick}) {
+export default function SortingItem({text, isSelected, onClick}) {
     
     const color = isSelected? "primary.500" : "neutral.800";
     return (

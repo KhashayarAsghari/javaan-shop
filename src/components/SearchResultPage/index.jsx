@@ -1,8 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import { SearchResultTitle } from "../PublicComponents/VisualComponents";
-import { FiltersSvg } from "../PublicComponents/SVGs";
-import FilterItem from "./_components/FilterItem";
+import { SortingSvg } from "../PublicComponents/SVGs";
+import SortingItem from "./_components/SortingItem";
 import ProductCard from "./_components/ProductCard";
+import Filters from "./_components/Filters";
 
 
 export default function SearchResultPage() {
@@ -31,27 +32,27 @@ export default function SearchResultPage() {
         <>
             <SearchResultTitle path="جوان استیل / لوازم خانگی / یخچال" title="نتایج جستجو برای یخچال" />
 
-            <Box maxWidth="1280px" marginX="auto" display="flex" padding="16px">
+            <Box maxWidth="1280px" marginX="auto" display="flex">
                 {/* filters */}
                 <Box width="264px" flexShrink={0}>
-
+                    <Filters />
                 </Box>
 
                 {/* results */}
                 <Box width="100%" padding={16} sx={{border: "1px solid #DFE0E1"}} borderRadius={6}>
-                    {/* filters section */}
+                    {/* sorting section */}
                     <Box display="flex" justifyContent="space-between" alignItems="center" marginBottom={12}>
                         <Box display="flex" alignItems="center" gap={16}>
                             <Box display="flex" alignItems="center" gap={4}>
-                                <FiltersSvg />
+                                <SortingSvg />
                                 <Typography component="span" color="blue.500" variant="button2">مرتب‌سازی:</Typography>
                             </Box>
 
                             <Box display="flex" alignItems="center" gap={10}>
-                                <FilterItem text="مرتبط ترین" isSelected />
-                                <FilterItem text="پربازدید ترین" />
-                                <FilterItem text="جدید ترین" />
-                                <FilterItem text="پرفروش ترین" />
+                                <SortingItem text="مرتبط ترین" isSelected />
+                                <SortingItem text="پربازدید ترین" />
+                                <SortingItem text="جدید ترین" />
+                                <SortingItem text="پرفروش ترین" />
                             </Box>
                         </Box>
 
@@ -62,7 +63,7 @@ export default function SearchResultPage() {
                     </Box>
 
                     {/* results */}
-                    <Box display="flex" flexWrap="wrap" >
+                    <Box display="flex" flexWrap="wrap" alignItems="stretch">
                         {[...new Array(9)].map(() => (
                             <ProductCard
                                 sale
