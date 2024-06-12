@@ -4,12 +4,14 @@ const theme = createTheme({
     spacing: 2,
     palette: {
       primary: {
+        "400": "#FFB833",
         "500": '#F96302',
       },
       blue: {
         "500": "#0955A3"
       },
       neutral: {
+        "25": "#F4F5F5",
         "200": "#A0A3A6",
         "600": "#4F5254",
         "700": "#3B3D3F",
@@ -20,6 +22,7 @@ const theme = createTheme({
         "50": "#D5E8EB",
         "500": "#41818B",
         "600": "#34676F",
+        "700": "#274D53"
       },
       danger: {
             "500": "#D3302F",

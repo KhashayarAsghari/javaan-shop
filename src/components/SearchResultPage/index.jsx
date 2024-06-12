@@ -4,6 +4,7 @@ import { SortingSvg } from "../PublicComponents/SVGs";
 import SortingItem from "./_components/SortingItem";
 import ProductCard from "./_components/ProductCard";
 import Filters from "./_components/Filters";
+import { fridgeIntro } from "../../mockData";
 
 
 export default function SearchResultPage() {
@@ -32,7 +33,7 @@ export default function SearchResultPage() {
         <>
             <SearchResultTitle path="جوان استیل / لوازم خانگی / یخچال" title="نتایج جستجو برای یخچال" />
 
-            <Box maxWidth="1280px" marginX="auto" display="flex">
+            <Box maxWidth="1280px" marginX="auto" display="flex" gap={4} paddingBottom={20}>
                 {/* filters */}
                 <Box width="264px" flexShrink={0}>
                     <Filters />
@@ -83,6 +84,22 @@ export default function SearchResultPage() {
 
 
                 </Box>
+            </Box>
+
+            <Box maxWidth="1280px" marginX="auto" display="flex" gap={16} paddingBottom={20} marginTop={40} justifyContent="space-between" alignItems="center">
+                <Box>
+                    <Typography component="h3" variant="h3" color="neutral.800">معرفی انواع ‌یخچال‌ها</Typography>
+                    <Typography component="p" variant="body" color="neutral.800" sx={{marginTop: "16px"}}>{fridgeIntro}</Typography>
+                </Box>
+                <Box
+                    component="img"
+                    sx={{
+                        width: "20%",
+                        borderRadius: "4px",
+                        maxWidth: "240px",
+                    }}
+                    src="/images/intro/fridge-details.png"
+                />
             </Box>
         </>
     )

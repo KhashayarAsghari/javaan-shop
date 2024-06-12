@@ -1,5 +1,5 @@
 import { Box, Button, IconButton, InputAdornment, List, ListItem, ListItemButton, ListItemIcon, ListItemText, TextField, Typography } from "@mui/material";
-import { CartSvg, ChevronDown, DiamondSvg, LoginSvg, PhoneSvg } from "../PublicComponents/SVGs";
+import { CartSvg, ChevronDown, DiamondSvg, LoginSvg, PhoneSvg, SearchGreenSvg } from "../PublicComponents/SVGs";
 import { Search } from "@mui/icons-material";
 
 export default function Header() {
@@ -37,13 +37,38 @@ export default function Header() {
                         <TextField
                             label="محصول، برند یا دسته‌بندی مورد نظرتان را جستجو کنید."
                             fullWidth
+                            
+                            sx={[
+                                { width: "400px", position: "relative", backgroundColor: "#D5E8EB", display: "flex", flexDirection: 'row-reverse' },
+                                {
+                                    '& input': {
+                                        padding: "12px",
+                                        marginRight: "16px",
+                                       
+                                    },
+                                    "& button": {
+                                        float: "right",
+                                        position: "absolute",
+                                        top: "50%",
+                                        transform: "translateY(-50%)",
+                                        right: "8px",
+                                        margin: "0",
+                                        padding: "0"
 
+                                    },
+                                    "& label": {
+                                        color: "#41818B",
+                                        right: "3.5rem"
+                                    }
+                                    
+                                },
+                            ]}
                             InputProps={{
                                 endAdornment: (
                                     <InputAdornment>
                                         <IconButton>
 
-                                            <Search />
+                                            <SearchGreenSvg />
                                         </IconButton>
                                     </InputAdornment>
                                 ),
@@ -94,7 +119,7 @@ export default function Header() {
                         </ListItem>
                     </List>
 
-                    <Button variant="outlined" size="small" sx={{padding: "0 24px", border: "2px solid #0955A3", color: "#0955A3" }}>فروشنده شوید!</Button>
+                    <Button variant="outlined" size="small" sx={{padding: "0 24px",height: "40px", border: "2px solid #0955A3", color: "#0955A3" }}>فروشنده شوید!</Button>
                 </Box>
             </Box>
         </Box>

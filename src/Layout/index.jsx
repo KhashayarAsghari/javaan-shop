@@ -2,6 +2,7 @@ import { ThemeProvider } from "@emotion/react";
 import theme from "../theme";
 import Header from "../components/Header";
 import { Box } from "@mui/material";
+import Footer from "../components/Footer";
 
 export default function Layout({children}) {
 
@@ -11,6 +12,7 @@ export default function Layout({children}) {
             <Box component="main">
                 {children}
             </Box>
+            <Footer />
         </ThemeProvider>
     )
 }
