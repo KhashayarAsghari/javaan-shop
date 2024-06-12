@@ -11,30 +11,30 @@ const PriceRangeStyled = styled(Slider)(({ theme }) => ({
     height: 3,
     padding: '13px 0',
     '& .MuiSlider-thumb': {
-      height: 16,
-      width: 16,
-      backgroundColor: '#34676F',
-      border: '1px solid currentColor',
-      '&:hover': {
-        boxShadow: '0 0 0 8px rgba(58, 133, 137, 0.16)',
-      },
-      '& .airbnb-bar': {
-        height: 9,
-        width: 1,
-        backgroundColor: 'currentColor',
-        marginLeft: 1,
-        marginRight: 1,
-      },
+        height: 16,
+        width: 16,
+        backgroundColor: '#34676F',
+        border: '1px solid currentColor',
+        '&:hover': {
+            boxShadow: '0 0 0 8px rgba(58, 133, 137, 0.16)',
+        },
+        '& .airbnb-bar': {
+            height: 9,
+            width: 1,
+            backgroundColor: 'currentColor',
+            marginLeft: 1,
+            marginRight: 1,
+        },
     },
     '& .MuiSlider-track': {
-      height: 3,
+        height: 3,
     },
     '& .MuiSlider-rail': {
-      color: theme.palette.mode === 'dark' ? '#bfbfbf' : '#d8d8d8',
-      opacity: theme.palette.mode === 'dark' ? undefined : 1,
-      height: 3,
+        color: theme.palette.mode === 'dark' ? '#bfbfbf' : '#d8d8d8',
+        opacity: theme.palette.mode === 'dark' ? undefined : 1,
+        height: 3,
     },
-  }));
+}));
 
 // switch styles
 const FastSendSwitch = styled(Switch)(({ theme }) => ({
@@ -91,6 +91,7 @@ export default function Filters() {
     const [checkedColors, setCheckedColors] = useState([]);
 
     const [isFastSendChecked, setIsFastSendChecked] = useState(false);
+    const [isAvailableProductsChecked, setIsAvailableProductsChecked ] = useState(false)
 
 
     const handleToggleBrands = (value) => () => {
@@ -153,7 +154,7 @@ export default function Filters() {
     return (
 
         <>
-            <Box sx={{ padding: "24px 24px 16px 16px" }}>
+            <Box className="sticky top-3" sx={{ padding: "24px 24px 16px 16px" }}>
 
 
                 <form className="w-full" onSubmit={(e) => e.preventDefault}>
@@ -292,7 +293,7 @@ export default function Filters() {
 
                         <FormControlLabel
                             className="flex flex-row-reverse justify-between w-full"
-                            sx={{ margin: "0", padding: "8px 0" }}
+                            sx={{ margin: "0", padding: "8px 0", borderBottom: "1px solid #e0e0e0" }}
                             color=""
                             control={
                                 <FastSendSwitch checked={isFastSendChecked} onChange={handleFastSendChange} name="isFastSendChecked" />
@@ -370,113 +371,28 @@ export default function Filters() {
                                         disableSwap
                                     />
                                 </Box>
+                                <Box component="div" className="flex justify-between w-full">
+                                    <Typography component="span" variant="caption" color="tertiary.500">گرانترین</Typography>
+                                    <Typography component="span" variant="caption" color="tertiary.500">ارزانترین</Typography>
+                                </Box>
                             </Collapse>
                         </List>
+
+                        {/* available products */}
+                        <FormControlLabel
+                            className="flex flex-row-reverse justify-between w-full"
+                            sx={{ margin: "0", padding: "8px 0" }}
+                            color=""
+                            control={
+                                <FastSendSwitch checked={isAvailableProductsChecked} onChange={() => setIsAvailableProductsChecked(!isAvailableProductsChecked)} name="isFastSendChecked" />
+                            }
+                            label="کالاهای موجود"
+                        />
                     </Box>
                 </form>
 
             </Box>
-            {/* <Box sx={{ padding: "24px 24px 16px 16px" }}>
-                <Box display="flex" justifyContent="space-between" alignItems="center">
-                    <Typography component="span" variant="button1" color="blue.500">
-                        فیلترها
-                    </Typography>
-                    <FiltersSvg />
-                </Box>
 
-                <Button
-                    component="label"
-                    role={undefined}
-                    variant="text"
-                    tabIndex={-1}
-                    endIcon={<Delete />}
-                >
-                    حذف فیلتر ها
-
-                </Button>
-                <List
-                    sx={{ width: '100%' }}
-                    component="aside"
-                >
-
-                    
-                    <ListItemButton sx={{ display: "flex", justifyContent: "space-between", padding: "0" }} onClick={() => setIsBrandsOpen(!isBrandsOpen)}>
-                        <ListItemText sx={{ textAlign: "start" }} primary="برند" />
-
-                        <ListItemIcon sx={{ minWidth: "min-content" }} >
-                            {isBrandsOpen ? <ExpandLess /> : <ExpandMore />}
-                        </ListItemIcon>
-                    </ListItemButton>
-                    <Collapse in={isBrandsOpen} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding>
-                            {["سامسونگ", "ال جی", "دوو", "بوش", "شیائومی", "موتورولا"].map((item, index) => {
-                                const labelId = `brands${index}`;
-                                return (
-                                    <ListItemButton onClick={handleToggleBrands(item)} key={labelId} dense sx={{ display: "flex", justifyContent: "flex-start", gap: "8px" }}>
-                                        <ListItemIcon sx={{ minWidth: "max-content" }}>
-                                            <Checkbox
-                                                size="small"
-                                                edge="start"
-                                                tabIndex={-1}
-                                                disableRipple
-                                                checked={checkedBrands.indexOf(item) !== -1}
-                                                sx={{
-                                                    color: "neutral.500",
-                                                    '&.Mui-checked': {
-                                                        color: "success.500",
-                                                    }
-                                                }}
-                                            />
-                                        </ListItemIcon>
-                                        <ListItemText sx={{ textAlign: "start" }} id={labelId} primary={item} />
-                                    </ListItemButton>
-                                )
-                            })
-                            }
-                        </List>
-                    </Collapse>
-
-
-                   
-                    <ListItemButton sx={{ display: "flex", justifyContent: "space-between", padding: "0" }} onClick={() => setIsSellersOpen(!isSellersOpen)}>
-                        <ListItemText sx={{ textAlign: "start" }} primary="فروشنده" />
-
-                        <ListItemIcon sx={{ minWidth: "min-content" }} >
-                            {isSellersOpen ? <ExpandLess /> : <ExpandMore />}
-                        </ListItemIcon>
-                    </ListItemButton>
-                    <Collapse in={isSellersOpen} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding>
-                            {["شخص", "مغازه دار", "فروشنده بد", "فروشنده خوب", "فروشنده 2", "فروشنده 1"].map((item, index) => {
-                                const labelId = `sellers${index}`;
-                                return (
-                                    <ListItemButton onClick={handleToggleSellers(item)} key={labelId} dense sx={{ display: "flex", justifyContent: "flex-start", gap: "8px" }}>
-                                        <ListItemIcon sx={{ minWidth: "max-content" }}>
-                                            <Checkbox
-                                                size="small"
-                                                edge="start"
-                                                tabIndex={-1}
-                                                disableRipple
-                                                checked={checkedSellers.indexOf(item) !== -1}
-                                                sx={{
-                                                    color: "neutral.500",
-                                                    '&.Mui-checked': {
-                                                        color: "success.500",
-                                                    }
-                                                }}
-                                            />
-                                        </ListItemIcon>
-                                        <ListItemText sx={{ textAlign: "start" }} id={labelId} primary={item} />
-                                    </ListItemButton>
-                                )
-                            })
-                            }
-                        </List>
-                    </Collapse>
-
-
-                </List>
-            </Box> */}
         </>
     )
 }
