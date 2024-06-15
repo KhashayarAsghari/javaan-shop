@@ -9,6 +9,7 @@ const theme = createTheme({
       500: "#F96302",
     },
     blue: {
+      400: "#3A77B5",
       500: "#0955A3",
     },
     neutral: {

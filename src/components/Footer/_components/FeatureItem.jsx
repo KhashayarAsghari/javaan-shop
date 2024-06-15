@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 
 export default function FeatureItem({ title, desc, image }) {
     return (
-        <Box display="flex" alignItems="center" gap={4}>
+        <Box className="flex flex-col md:flex-row items-center" gap={4}>
             <Box
                 component="img"
                 sx={{
@@ -13,8 +13,8 @@ export default function FeatureItem({ title, desc, image }) {
             />
 
             <Box>
-                <Typography component="h3" variant="button1" color="tertiary.700" className="whitespace-nowrap">{title}</Typography>
-                <Typography component="span" variant="button2" color="tertiary.700" className="whitespace-nowrap">{desc}</Typography>
+                <Typography component="h4" variant="button2" color="tertiary.700" className="whitespace-nowrap">{title}</Typography>
+                <Typography component="span" variant="subtitle2" color="tertiary.700" className="whitespace-nowrap">{desc}</Typography>
             </Box>
         </Box>
     )
