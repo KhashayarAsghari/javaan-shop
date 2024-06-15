@@ -41,8 +41,8 @@ export default function SearchResultPage() {
 
                 {/* results */}
                 <Box width="100%" padding={16} sx={{border: "1px solid #DFE0E1"}} borderRadius={6}>
-                    {/* sorting section */}
-                    <Box display="flex" justifyContent="space-between" alignItems="center" marginBottom={12}>
+                 
+                    {/* <Box display="flex" justifyContent="space-between" alignItems="center" marginBottom={12}>
                         <Box display="flex" alignItems="center" gap={16}>
                             <Box display="flex" alignItems="center" gap={4}>
                                 <SortingSvg />
@@ -61,7 +61,7 @@ export default function SearchResultPage() {
                             <Typography component="span" color="neutral.500">{resultsCount}</Typography>
                             <Typography component="span" color="neutral.500" sx={{ marginRight: "4px" }}>کالا</Typography>
                         </Box>
-                    </Box>
+                    </Box> */}
 
                     {/* results */}
                     <Box display="flex" flexWrap="wrap" alignItems="stretch">
