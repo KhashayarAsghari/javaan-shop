@@ -7,9 +7,14 @@ export default function SortingItem({text, isSelected, onClick}) {
     return (
         <Button
             // onClick={onClick} 
-            sx={{padding: "0",
-                color
-            }}
+            sx={[{padding: "0",
+                height: "25px !important",
+                color: color
+            }, {
+                "& span": {
+                    height: "20px"
+                }
+            }]}
             variant="text"
             >
                 {text}

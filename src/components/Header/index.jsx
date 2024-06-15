@@ -225,7 +225,7 @@ export default function Header() {
 
       {/* mobile header */}
       <Box
-        className="md:hidden px-4 py-3 flex justify-between items-center"
+        className="md:hidden px-4 py-3 flex justify-between items-center shadow-md"
         component="div"
       >
         <IconButton>
