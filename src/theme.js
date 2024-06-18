@@ -49,6 +49,7 @@ const theme = createTheme({
       },
     },
     button1: {
+      fontFamily: "IRANSansXFaNum",
       fontWeight: 700,
       fontSize: "16px",
       lineHeight: "24px",

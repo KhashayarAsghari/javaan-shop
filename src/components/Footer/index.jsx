@@ -187,7 +187,7 @@ export default function Footer() {
             <TelegramSvg />
           </Box>
 
-          <Accordion>
+          <Accordion className="md:hidden">
             <AccordionSummary
               expandIcon={<ExpandMoreSvg />}
               aria-controls="panel1-content"
@@ -250,7 +250,7 @@ export default function Footer() {
             </AccordionDetails>
           </Accordion>
 
-          <Accordion>
+          <Accordion className="md:hidden">
             <AccordionSummary
               expandIcon={<ExpandMoreSvg />}
               aria-controls="panel1-content"
@@ -375,12 +375,18 @@ export default function Footer() {
 
         {/* copyright */}
         <Typography
-        marginBottom={30}
+          marginBottom={30}
           component="p"
           variant="caption"
           color="white"
           className="w-full text-center"
-          sx={{ marginTop: "16px" }}
+          sx={[{ marginTop: "16px" },
+            {
+              "@media (min-width: 768px)": {
+                marginBottom: 0
+              } 
+            }
+          ]}
         >
           تمام حقوق و محتویات متعلق به شرکت
           <Typography component="span" color="primary.400">

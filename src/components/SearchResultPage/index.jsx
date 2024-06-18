@@ -26,7 +26,7 @@ export default function SearchResultPage() {
     for (let i = 0; i < reversed.length; i++) {
       resultTemp += reversed[i];
       count++;
-      if (count === 3) {
+      if (count === 3 && i < reversed.length - 1) {
         resultTemp += ",";
         count = 0;
       }
@@ -35,7 +35,7 @@ export default function SearchResultPage() {
     return resultTemp.split("").reverse().join("");
   }
 
-  const resultsCount = getSeparatedNumber(24783);
+  const resultsCount = getSeparatedNumber(247832);
 
   return (
     <>
