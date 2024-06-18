@@ -114,6 +114,7 @@ const theme = createTheme({
             border: `1px solid #D5E8EB`,
           },
           "&.Mui-focused": {
+            
             "& .MuiOutlinedInput-notchedOutline": {
               border: `1px solid #D5E8EB`,
               color: "#41818B",

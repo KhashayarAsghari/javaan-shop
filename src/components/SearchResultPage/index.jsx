@@ -68,6 +68,8 @@ export default function SearchResultPage() {
             justifyContent="space-between"
             alignItems="center"
             marginBottom={12}
+            paddingX={8}
+            gap={8}
           >
             <Box display="flex" alignItems="center" gap={16}>
               <Box display="flex" alignItems="center" gap={4}>
@@ -198,7 +200,7 @@ export default function SearchResultPage() {
           </Box>
 
           {/* results */}
-          <Box className="flex flex-wrap items-stretch justify-center">
+          <Box className="grid grid-cols-1 md:grid-cols-3 items-stretch justify-items-center">
             {[...new Array(9)].map(() => {
               const off = (Math.floor(Math.random() * 2)) * 10;
               const mainPrice = Math.floor(Math.random() * 100) * 1000000;
@@ -230,6 +232,7 @@ export default function SearchResultPage() {
         marginTop={40}
         justifyContent="space-between"
         alignItems="center"
+        paddingX={8}
       >
         <Box>
           <Typography component="h3" variant="h3" color="neutral.800">

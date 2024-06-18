@@ -104,7 +104,7 @@ export default function Footer() {
       </Box>
 
       {/* footer */}
-      <Box bgcolor="neutral.800" paddingX={4} paddingY={16}>
+      <Box bgcolor="neutral.800" paddingX={8} paddingY={16}>
         <Box
           component="div"
           maxWidth="1280px"
